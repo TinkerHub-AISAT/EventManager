@@ -1,29 +1,89 @@
-# Contributing Guidelines
+# Contributing to Event Listing Platform
 
-Thank you for your interest in contributing to our project! We welcome contributions from everyone.
+Thank you for your interest in contributing to Event Listing Platform, a web application that allows users to register and view events in their area, and admins to add and manage events using Firebase and Flask. We welcome and appreciate any kind of contribution, whether it is code, documentation, design, feedback, or anything else. By participating in this project, you agree to abide by our [code of conduct](^1^) and respect our [license](^2^). You can also check our [roadmap](^3^) to see our current and future plans.
+
+## Table of Contents
+
+- [Contributing to Event Listing Platform](#contributing-to-event-listing-platform)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+  - [Contributing Workflow](#contributing-workflow)
+  - [Reporting Issues and Feature Requests](#reporting-issues-and-feature-requests)
+  - [Improving Code Quality and Style](#improving-code-quality-and-style)
+  - [Acknowledging Contributors](#acknowledging-contributors)
 
 ## Getting Started
 
-To get started, please follow these steps:
+To get started, you need to have Python 3, pip, and virtualenv installed on your machine. You also need to have a Firebase project with the following services enabled: Authentication, Firestore, and Storage. You need to download the Firebase SDK service account key and save it as firebase-key.json in the project folder.
 
-1. Fork the repository.
-2. Create a new branch for your changes.
-3. Make your changes and commit them.
-4. Push your changes to your fork.
-5. Submit a pull request.
+To set up the development environment, follow these steps:
 
-## Code of Conduct
+- Clone the project from GitHub:
 
-Please note that we have a code of conduct in place to ensure that our community is welcoming and inclusive. By participating in this project, you agree to abide by its terms.
+```bash
+git clone https://github.com/your-username/event-listing-platform.git
+```
 
-## Reporting Bugs
+- Create and activate a virtual environment:
 
-If you find a bug in the project, please report it by opening an issue on GitHub.
+```bash
+cd event-listing-platform
+virtualenv venv
+source venv/bin/activate
+```
 
-## Contact Us
+- Install the required packages:
 
-If you have any questions or concerns, please feel free to contact us at [email address].
+```bash
+pip install -r requirements.txt
+```
 
-## License
+- Set the environment variables:
 
-This project is licensed under the MIT License. By contributing to this project, you agree to license your contributions under the same license.
+```bash
+export FLASK_APP=app.py
+export FLASK_ENV=development
+```
+
+- Run the Flask server:
+
+```bash
+flask run
+```
+
+The project will be available at http://localhost:5000/
+
+## Contributing Workflow
+
+To contribute to this project, follow these steps:
+
+- Fork the project from GitHub
+- Create a new branch with a descriptive name
+- Make your changes and commit them with a clear message
+- Push your branch to your forked repository
+- Create a pull request to the main repository
+- Wait for the review and feedback
+
+## Reporting Issues and Feature Requests
+
+To report issues and feature requests, use the [issue tracker](^4^) of this project. Please follow these guidelines:
+
+- Use the issue template provided
+- Label the issue appropriately
+- Provide relevant information such as screenshots, logs, etc.
+- Be respectful and constructive
+
+## Improving Code Quality and Style
+
+To improve the quality and style of the code, please follow these guidelines:
+
+- Follow the [PEP 8](^5^) coding standards for Python
+- Write clear and concise comments and docstrings
+- Use [black](^6^) and [isort](^7^) to format the code
+- Use [flake8] and [pylint] to check the code quality
+- Use [pytest] and [coverage] to write and run tests
+- Use [sphinx] and [readthedocs] to generate and host documentation
+
+## Acknowledging Contributors
+
+We appreciate and acknowledge all the contributors and their work for this project. We credit them in the README.md file and thank them in the pull request comments. We also reward them with badges and stickers. You can see the list of the contributors and their roles [here].
