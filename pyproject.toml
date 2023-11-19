@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "eventmanager"
+version = "0.1.0"
+description = ""
+authors = ["winter_x64 <75623356+winter-x64@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+firebase-admin = "^6.2.0"
+flask = "^3.0.0"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
