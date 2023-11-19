@@ -5,10 +5,10 @@ This is a web application that allows users to register and view events in their
 ## Features
 
 - User authentication and authorization
-- Event creation and editing 
-- Event listing and filtering 
-- Event details and registration 
-- Admin dashboard and analytics 
+- Event creation and editing
+- Event listing and filtering
+- Event details and registration
+- Admin dashboard and analytics
 
 ## Installation
 
@@ -21,7 +21,6 @@ To install the project, follow these steps:
 ```bash
 git clone https://github.com/TinkerHub-AISAT/EventManager.git
 ```
-
 
 - Create and activate a virtual environment:
 
@@ -50,14 +49,14 @@ export FLASK_ENV=development
 flask run
 ```
 
-The project will be available at http://localhost:5000/
+The project will be available at <http://localhost:5000/>
 
 ## Usage
 
 To use the project, you need to register as a user or an admin. You can use the following credentials for testing purposes:
 
-- User: user@test.com / password
-- Admin: admin@test.com / password
+- User: <user@test.com> / password
+- Admin: <admin@test.com> / password
 
 As a user, you can:
 

@@ -51,7 +51,7 @@ export FLASK_ENV=development
 flask run
 ```
 
-The project will be available at http://localhost:5000/
+The project will be available at <http://localhost:5000/>
 
 ## Contributing Workflow
 
