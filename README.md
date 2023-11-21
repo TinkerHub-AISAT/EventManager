@@ -18,36 +18,45 @@ To install the project, follow these steps:
 
 - Clone the project from GitHub:
 
-```bash
-git clone https://github.com/TinkerHub-AISAT/EventManager.git
-```
+    ```bash
+    git clone https://github.com/TinkerHub-AISAT/EventManager.git
+    ```
 
 - Create and activate a virtual environment:
 
-```bash
-cd EventManager
-python -m venv .venv
-source .venv/bin/activate
-```
+    ```bash
+    cd EventManager
+    ```
+
+    ```bash
+    python -m venv .venv
+    ```
+
+    ```bash
+    source .venv/bin/activate
+    ```
 
 - Install the required packages:
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 - Set the environment variables:
 
-```bash
-export FLASK_APP=app.py
-export FLASK_ENV=development
-```
+    ```bash
+    export FLASK_APP=app.py
+    ```
+
+    ```bash
+    export FLASK_ENV=development
+    ```
 
 - Run the Flask server:
 
-```bash
-flask run
-```
+    ```bash
+    flask run
+    ```
 
 The project will be available at <http://localhost:5000/>
 
