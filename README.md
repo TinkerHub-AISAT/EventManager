@@ -10,56 +10,6 @@ This is a web application that allows users to register and view events in their
 - Event details and registration
 - Admin dashboard and analytics
 
-## Installation
-
-To run this project, you need to have Python 3, pip, and virtualenv installed on your machine. You also need to have a Firebase project with the following services enabled: Authentication, Firestore, and Storage. You need to download the Firebase SDK service account key and save it as firebase-key.json in the project folder.
-
-To install the project, follow these steps:
-
-- Clone the project from GitHub:
-
-    ```bash
-    git clone https://github.com/TinkerHub-AISAT/EventManager.git
-    ```
-
-- Create and activate a virtual environment:
-
-    ```bash
-    cd EventManager
-    ```
-
-    ```bash
-    python -m venv .venv
-    ```
-
-    ```bash
-    source .venv/bin/activate
-    ```
-
-- Install the required packages:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-- Set the environment variables:
-
-    ```bash
-    export FLASK_APP=app.py
-    ```
-
-    ```bash
-    export FLASK_ENV=development
-    ```
-
-- Run the Flask server:
-
-    ```bash
-    flask run
-    ```
-
-The project will be available at <http://localhost:5000/>
-
 ## Usage
 
 To use the project, you need to register as a user or an admin. You can use the following credentials for testing purposes:
@@ -83,21 +33,15 @@ As an admin, you can:
 
 ## Contribution
 
-This project is open source and welcomes contributions from anyone. If you want to contribute to this project, please follow these steps:
+This project is open source and welcomes contributions from anyone. If you want to contribute to this project, please follow [these steps](CONTRIBUTING.md)
 
-- Fork the project from GitHub
-- Create a new branch with a descriptive name
-- Make your changes and commit them with a clear message
-- Push your branch to your forked repository
-- Create a pull request to the main repository
-- Wait for the review and feedback
 
 ## Contributors
 
 This project is created and maintained by:
 
-- Your name (your GitHub username)
-- Other contributors (their GitHub usernames)
+- TinkerHub AISAT
+- [Akhil B Xavier](https://github.com/winter-x64)
 
 ## License
 
