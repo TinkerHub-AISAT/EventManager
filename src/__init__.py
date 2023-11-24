@@ -15,12 +15,13 @@ load_dotenv()
 
 
 def flask_app():
-    app = Flask(__name__)
+    app = Flask(import_name=__name__)
 
     # _FIREBASECRED = FirebaseCreds()
 
-    from .views import home
+    from .views import views_home, views_user
 
-    app.register_blueprint(home.home_views, url_prefix="/")
+    app.register_blueprint(blueprint=views_home.HomeViews, url_prefix="/")
+    app.register_blueprint(blueprint=views_user.UserViews, url_prefix="/user")
 
     return app
