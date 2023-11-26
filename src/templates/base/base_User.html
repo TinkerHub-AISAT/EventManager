@@ -15,7 +15,7 @@
     <!-- NavBar - Start -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">EventManager</a>
+        <a class="navbar-brand" href="/">TinkerHub</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -27,13 +27,20 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/user/dashboard"
+              >
+                Home
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="/event/eventplace">Eventplace</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -43,19 +50,16 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                My Account
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="/user/profile">Profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/user/settings">Settings</a>
                 </li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -65,16 +69,14 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
+            <button class="btn btn-outline-dark" type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
     <!-- NavBar - End -->
     <!-- body - Start -->
-    {% block body %} {% endblock body %}
+    <div class="container">{% block body %} {% endblock body %}</div>
     <!-- body - End -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
