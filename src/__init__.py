@@ -1,5 +1,3 @@
-# * Dotenv module
-from dotenv import load_dotenv
 from flask import Flask
 
 # * firebase admin
@@ -11,7 +9,6 @@ from flask import Flask
 # from .config.cred import FirebaseCreds
 
 # load of the env variables in the project environment
-load_dotenv()
 
 
 def flask_app():

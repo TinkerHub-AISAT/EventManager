@@ -53,6 +53,7 @@ Before you begin, make sure you have the following installed:
 
 - [Python](https://www.python.org/downloads/) (version 3.10 or higher)
 - [Firebase](https://firebase.google.com/docs/admin/setup)
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 
 ### Setting Up the Development Environment
 
