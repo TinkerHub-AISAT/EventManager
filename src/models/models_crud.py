@@ -1,57 +1,32 @@
-from .. import db
+from .. import supabase
 
 
-def create_event(
-    EventID: str, event_title: str, event_desc: str, date_time: str
-) -> None:
-    if all(event_title, event_desc, EventID, date_time):
-        return
+def event_fetch_all():
+    return supabase.table(table_name="events").select("*").execute()
 
-    # * DataBase References
-    event_ref = db.collection("Events").document(f"{EventID}")  # <- database reference>
 
-    # * Adding the date to the database
-    event_ref.set(
-        {
-            "title": event_title,
-            "desc": event_desc,
-            "datetime": date_time,
-        }
+def event_fetch_by_id(event_id: str):
+    return (
+        supabase.table(table_name="events")
+        .select("*")
+        .eq(column="event_id", value=event_id)
+        .execute()
     )
 
 
-def read_event(EventID: str) -> dict:
-    # * DataBase References
-    event_ref = db.collection("Events").document(f"{EventID}").get()
-    event_dict = event_ref.to_dict()  # convert it to dict
-    return event_dict
+def event_update(event_id: str, data: dict):
+    return (
+        supabase.table(table_name="events")
+        .update(json=data)
+        .eq(column="event_id", value=event_id)
+        .execute()
+    )
 
 
-def update_event(
-    EventID: str, event_title: str = None, event_desc: str = None, date_time: str = None
-) -> None:
-    if all(EventID, event_title, event_desc, date_time):
-        return
-    # * DataBase References
-    event_ref = db.collection("Events").document(f"{EventID}").get()
-
-    # Update event title
-    if event_title != None and event_desc == None and date_time == None:
-        event_ref.update({"title": event_title})
-
-    # Update event desc
-    elif event_title == None and event_desc != None and date_time == None:
-        event_ref.update({"desc": event_desc})
-
-    # Update event date time
-    elif event_title == None and event_desc == None and date_time != None:
-        event_ref.update({"datetime": date_time})
-
-
-def delete_event(EventID: int) -> bool:
-    try:
-        # * DataBase References
-        db.collection("Events").document(f"{EventID}").delete()
-        return True
-    except:
-        return False
+def event_delete(event_id: str):
+    return (
+        supabase.table(table_name="events")
+        .delete()
+        .eq(column="event_id", value=event_id)
+        .execute()
+    )

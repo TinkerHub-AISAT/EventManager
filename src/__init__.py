@@ -1,33 +1,22 @@
-import firebase_admin
-from firebase_admin import credentials, firestore
 from flask import Flask
+from supabase import Client, create_client
 
-# custom imports
-from .config.cred import FirebaseCreds
+from .config import cred
 
-# ? Firebase config
-# Load Firebase credentials
-firebase_creds = FirebaseCreds()
-
-# Convert FirebaseCreds to a dictionary
-firebase_creds_dict = firebase_creds.to_json()
-
-# Create a Firebase credentials object
-cred = credentials.Certificate(firebase_creds_dict)
-
-# Initialize Firebase app
-firebase_admin.initialize_app(cred)
-
-db = firestore.client()
+supabase: Client = create_client(
+    supabase_url=cred.supabase_url(), supabase_key=cred.supabase_key()
+)
 
 
-def flask_app():
+def flask_app() -> Flask:
     app = Flask(import_name=__name__)
 
+    from .auth import auth_user
     from .views import views_event, views_home, views_user
 
     app.register_blueprint(blueprint=views_home.HomeViews, url_prefix="/")
     app.register_blueprint(blueprint=views_user.UserViews, url_prefix="/user")
     app.register_blueprint(blueprint=views_event.ViewEvent, url_prefix="/event")
+    app.register_blueprint(blueprint=auth_user.auth, url_prefix="/auth")
 
     return app
