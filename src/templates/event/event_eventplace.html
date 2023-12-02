@@ -9,5 +9,30 @@
 
 <h1>Eventplace page</h1>
 
-{% endblock body %}
-<!-- body - End -->
+<!--  -->
+<br />
+<ol class="list-group list-group-numbered">
+  <div class="list-group">
+    {% for data_key, events in event_list %}
+    <!--  -->
+    {% if data_key == 'data' %}
+    <!--  -->
+    {% for event in events %}
+
+    <a href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ event['title'] }}</h5>
+        <small class="text-body-secondary">
+          <span class="badge bg-dark rounded-pill">registered 24</span>
+          3 days ago
+        </small>
+      </div>
+      <p class="mb-1">{{ event['desc'] }}</p>
+      <small class="text-body-secondary">By TinkerHub AISAT</small>
+    </a>
+    {% endfor %} {% endif %} {% endfor %}
+  </div>
+
+  <!-- body - End -->
+  {% endblock body %}
+</ol>
