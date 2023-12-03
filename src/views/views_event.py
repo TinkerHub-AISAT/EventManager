@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, redirect, render_template, request, url_for
 
 from ..models import models_crud
 
@@ -15,11 +15,25 @@ def eventplace():
     )
 
 
-@ViewEvent.route(rule="/update", methods=["GET"])
-def update():
-    return render_template(template_name_or_list="event/event_update.html")
+@ViewEvent.route(rule="/update", methods=["GET", "POST"])
+def update(event_id: str):
+    if request.method == "POST":
+        pass
+    else:
+        event_data = models_crud.event_fetch_by_id(event_id=event_id)
+        return render_template(
+            template_name_or_list="event/event_update.html",
+            event_data=event_data,
+        )
 
 
 @ViewEvent.route(rule="/create", methods=["GET"])
 def create():
-    return render_template(template_name_or_list="event/event_create.html")
+    if request.method == "POST":
+        data = {}
+
+        models_crud.event_create(event_data=data)
+
+        return redirect(location=url_for(endpoint="ViewEvent.eventplace"))
+    else:
+        return render_template(template_name_or_list="event/event_create.html")
