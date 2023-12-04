@@ -23,14 +23,14 @@ def login():
 
         else:
             try:
-                user = supabase.auth.sign_in_with_password(
+                seesion = supabase.auth.sign_in_with_password(
                     credentials={"email": email, "password": pswd}
                 )
-                flash(message=f"Logged in as {user} !!", category="success")
+                flash(message=f"Logged in !!", category="success")
                 return redirect(location=url_for(endpoint="UserViews.dashboard"))
 
             except AuthApiError:
-                print(message="Invaild credentials", category="error")
+                flash(message="Invaild credentials", category="error")
                 return render_template(template_name_or_list="auth/login.html")
 
     return render_template(template_name_or_list="auth/login.html")
@@ -64,7 +64,7 @@ def signup():
                 credentials={"email": email, "password": pswd}
             )
 
-            flash(message=f"Account created as {session.user}", category="success")
+            flash(message=f"Account created ", category="success")
             return redirect(location=url_for(endpoint="UserViews.dashboard"))
 
     return render_template(template_name_or_list="auth/register.html")

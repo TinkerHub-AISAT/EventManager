@@ -10,6 +10,7 @@ supabase: Client = create_client(
 
 def flask_app() -> Flask:
     app = Flask(import_name=__name__)
+    app.config["SECRET_KEY"] = "hjshjhdjah kjshkjdhjs"
 
     from .auth import auth_user
     from .views import views_event, views_home, views_user
