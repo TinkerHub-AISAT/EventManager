@@ -52,8 +52,8 @@ To get started, you need to have Python 3, pip, and virtualenv installed on your
 Before you begin, make sure you have the following installed:
 
 - [Python](https://www.python.org/downloads/) (version 3.10 or higher)
-- [Firebase](https://firebase.google.com/docs/admin/setup)
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+- [supabase](https://supabase.com/docs/reference/python/introduction)
 
 ### Setting Up the Development Environment
 
@@ -61,90 +61,91 @@ Before you begin, make sure you have the following installed:
 
 2. Clone your forked repository to your local machine:
 
-    ```shell
-    git clone https://github.com/<your-namme>/EventManager.git
-    ```
+   ```shell
+   git clone https://github.com/<your-namme>/EventManager.git
+   ```
 
-    for example:
+   for example:
 
-    ```shell
-    git clone https://github.com/TinkerHub-AISAT/EventManager.git
-    ```
+   ```shell
+   git clone https://github.com/TinkerHub-AISAT/EventManager.git
+   ```
 
 3. Create a virtual environment and install the project dependencies:
 
-    - In the project directory
+   - In the project directory
 
-      ```shell
-      cd EventManager
-      ```
+     ```shell
+     cd EventManager
+     ```
 
-    - Create a virtual environment
+   - Create a virtual environment
 
-      For **Windows** use :
+     For **Windows** use :
 
-        ```shell
-        python -m venv .venv
-        ```
+     ```shell
+     python -m venv .venv
+     ```
 
-        For **Mac** or **Linux use** :
+     For **Mac** or **Linux use** :
 
-        ```shell
-        python3 -m venv .venv
-        ```
+     ```shell
+     python3 -m venv .venv
+     ```
 
-    - Activate the environment :
+   - Activate the environment :
 
-        For **Windows** use :
+     For **Windows** use :
 
-        ```shell
-        .\.venv\Scripts\Activate.ps1 
-        ```
+     ```shell
+     .\.venv\Scripts\Activate.ps1
+     ```
 
-        For **Mac** or **Linux use** :
+     For **Mac** or **Linux use** :
 
-        ```shell
-        source .venv/bin/activate
-        ```
+     ```shell
+     source .venv/bin/activate
+     ```
 
-    - Install the project dependencies
+   - Install the project dependencies
 
-        For **Windows** use :
+     For **Windows** use :
 
-        ```shell
-        pip install -r requirements.txt
-        ```
+     ```shell
+     pip install -r requirements.txt
+     ```
 
-        For **Mac** or **Linux use** :
+     For **Mac** or **Linux use** :
 
-        ```shell
-        pip3 install -r requirements.txt
-        ```
+     ```shell
+     pip3 install -r requirements.txt
+     ```
 
-4. Configure Firebase credentials:
-    - Copy the [env_example](env_example) to .env
+4. Configure supabase credentials:
 
-        ```shell
-        cp env_example .env
-        ```
+   - Copy the [env_example](env_example) to .env
 
-    - Add your Firebase credentials to it
+     ```shell
+     cp env_example .env
+     ```
+
+   - Add your credentials to it
 
 5. Run the project
 
-    - For **Windows** use :
+   - For **Windows** use :
 
-        ```shell
-        python main.py
-        ```
+     ```shell
+     python main.py
+     ```
 
-    - For **Mac** or **Linux use** :
+   - For **Mac** or **Linux use** :
 
-        ```shell
-        python3 main.py
-        ```
+     ```shell
+     python3 main.py
+     ```
 
-    > The project will be available at <http://localhost:5000/>
+   > The project will be available at <http://localhost:5000/>
 
 ## Development Workflow
 
