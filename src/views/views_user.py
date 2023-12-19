@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template
 
+from ..models import models_crud
+
 UserViews = Blueprint(name="UserViews", import_name=__name__)
 
 
@@ -10,7 +12,10 @@ def profile():
 
 @UserViews.route(rule="/dashboard", methods=["GET"])
 def dashboard():
-    return render_template(template_name_or_list="user/user_dashboard.html")
+    event_list = models_crud.event_fetch_all()
+    return render_template(
+        template_name_or_list="user/user_dashboard.html", event_list=event_list
+    )
 
 
 @UserViews.route(rule="/settings", methods=["GET"])

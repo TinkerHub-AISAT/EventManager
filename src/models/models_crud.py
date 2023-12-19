@@ -2,7 +2,7 @@ from .. import supabase
 
 
 def event_fetch_all():
-    """Returns on the events
+    """Returns all the events
     Returns:
         `APIResponse`
     """
