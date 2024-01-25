@@ -10,8 +10,41 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
   </head>
   <body>
+    <!-- alert msg -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <!-- message -->
+    {% if messages %}
+    <!-- category -->
+    {% for category, message in messages %}
+    <!--  -->
+    {% if category == 'error' %}
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
     <!-- NavBar - Start -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -36,7 +69,7 @@
                 aria-current="page"
                 href="/user/dashboard"
               >
-                Home
+                Dashboard
               </a>
             </li>
             <li class="nav-item">
@@ -54,11 +87,25 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="/user/profile">Profile</a>
+                  <a class="dropdown-item icon-link" href="/user/profile">
+                    <i class="bi bi-person"></i>
+                    Profile
+                  </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/user/settings">Settings</a>
+                  <a class="dropdown-item icon-link" href="/user/settings">
+                    <i class="bi bi-gear"></i>
+                    Settings
+                  </a>
                 </li>
+                <li><hr class="dropdown-divider" /></li>
+                <a
+                  class="dropdown-item icon-link link-danger"
+                  href="/auth/logout"
+                >
+                  <i class="bi bi-box-arrow-right"></i>
+                  Logout
+                </a>
               </ul>
             </li>
           </ul>
@@ -75,6 +122,35 @@
       </div>
     </nav>
     <!-- NavBar - End -->
+    <br />
+    <div class="container">
+      <!-- nav - start-->
+
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link link-dark active" aria-current="page" href="#">
+            My Events
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-dark" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="btn btn-outline-dark icon-link icon-link-hover"
+            role="button"
+            aria-disabled="true"
+            href="/event/create"
+          >
+            Add Events
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- nav - end -->
+
     <!-- body - Start -->
     <div class="container">{% block body %} {% endblock body %}</div>
     <!-- body - End -->

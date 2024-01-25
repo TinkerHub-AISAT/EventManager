@@ -5,9 +5,91 @@
 {% block title %} create your event {% endblock title %}
 
 <!-- body - Start -->
-{% block body %}
+{% block body %} <br />
+<div class="card border-dark mb-3">
+  <div class="card-title p-3">
+    <h2>Create a event here</h2>
+  </div>
+  <div class="card-body">
+    <form action="/event/create" method="post">
+      <div class="row">
+        <div class="col">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="eventname"
+              name="event_name"
+              placeholder="My Event"
+            />
+            <label for="eventname">Title</label>
+          </div>
 
-<h1>Create event page</h1>
+          <div class="row g-3">
+            <!-- Event location -->
+            <div class="col-sm">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="event_location"
+                  name="event_location"
+                  placeholder="Location"
+                />
+                <label for="event_location">Location</label>
+              </div>
+            </div>
+            <div class="row">
+              <!-- Event Date -->
+              <div class="col-sm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="event_date"
+                    name="event_date"
+                    placeholder="Date"
+                  />
+                  <label for="event_date">Date</label>
+                </div>
+              </div>
+              <!-- Event Time -->
+              <div class="col-sm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="time"
+                    class="form-control"
+                    id="event_time"
+                    name="event_time"
+                    placeholder="Time"
+                  />
+                  <label for="event_time">Time</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Event desc -->
+        <div class="col">
+          <div class="form-floating mb-3">
+            <textarea
+              name="event_desc"
+              class="form-control"
+              placeholder="Desc here"
+              id="eventdesc"
+              style="height: 200px"
+            ></textarea>
+            <label for="eventdesc"> Description </label>
+          </div>
+        </div>
+      </div>
 
-{% endblock body %}
+      <!-- Btn for the submission and reset -->
+      <button type="reset" class="btn btn-outline-dark">Clear</button>
+      <button type="submit" class="btn btn-outline-dark">Add</button>
+    </form>
+  </div>
+</div>
+
 <!-- body - End -->
+{% endblock body %}
